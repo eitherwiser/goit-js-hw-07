@@ -1,13 +1,13 @@
-const inputRef = document.querySelector('#name-input');
-const outputRef = document.querySelector('#name-output');
+const input = document.querySelector('#name-input');
+const output = document.querySelector('#name-output');
 
-function onInputRefChange(event) {
-  return inputRef.value.length >= 1
-    ? (outputRef.textContent = event.currentTarget.value)
-    : (outputRef.textContent = 'незнакомец');
+function inputChange(event) {
+  return input.value.length >= true
+    ? (output.textContent = event.currentTarget.value)
+    : (output.textContent = 'незнакомец');
 }
 
-inputRef.addEventListener('input', onInputRefChange);
+input.addEventListener('input', inputChange);
 
 
 /*
