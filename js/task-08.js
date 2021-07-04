@@ -4,6 +4,11 @@ const refs = {
   container: document.querySelector('#boxes'),
 };
 
+function destroyBtn() {
+  refs.container.append([])
+  refs.container.innerHTML = '';
+};
+
 function createBoxes(amount) {
   const boxes = [];
 
@@ -14,19 +19,17 @@ function createBoxes(amount) {
     newContainer.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     boxes.push(newContainer);
   }
-
+  destroyBtn();
   refs.container.append(...boxes);
 }
+
+refs.destroyBtn.addEventListener('click', destroyBtn);
 
 refs.renderBtn.addEventListener('click', () => {
   const amount = document.querySelector('input').value;
   createBoxes(amount);
 });
 
-refs.destroyBtn.addEventListener('click', () => {
-  refs.container.innerHTML = '';
-  refs.input.value = '';
-});
 
 
 /*
