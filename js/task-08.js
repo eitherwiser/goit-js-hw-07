@@ -5,7 +5,6 @@ const refs = {
 };
 
 function destroyBtn() {
-  refs.container.append([])
   refs.container.innerHTML = '';
 };
 
